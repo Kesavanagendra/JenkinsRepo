@@ -34,11 +34,11 @@ public class LoginPageTest extends HomePage {
 		driver.quit();
 	}
 	
-	@Test
-	public void loginPageAction() throws IOException {
+	@Test(dataProvider = "testdata")
+	public void loginPageAction(String user1, String user2) throws IOException {
 		
 		lp.clickLogin();
-		lp.enterData("Ites@test.com","Itest@test");
+		lp.enterData(user1,user2);
 		lp.clickLoginBtn();
 		
 		try {
